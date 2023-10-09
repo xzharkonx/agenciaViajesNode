@@ -13,11 +13,11 @@ import dotenv from 'dotenv/config'
 // Mostramos la variable de entorno, requerimos detener e iniciar el servidor.
 // console.log(process.env.DB_HOST);
 
-const { DB_NAME, DB_USER, DB_PASS, DB_HOST } = process.env;
+const { DB_NAME, DB_USER, DB_PASS, DB_HOST, DB_PORT } = process.env;
 // BD, user, pass
 const db = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
     host: DB_HOST,
-    port: '3306',
+    port: DB_PORT,
     dialect: 'mysql', // También Sequelize es compatible con postgresql
     define: {
         timestamps: false // Se pone false porque este tiene a poner
