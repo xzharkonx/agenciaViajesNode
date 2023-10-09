@@ -9,6 +9,8 @@ import router from './routes/index.js'
 // Importamos la configuración de Sequelize para conectar con mysql.
 import db from './config/db.js'
 
+import dotenv from 'dotenv/config'
+
 const app = express();
 
 // * Conectar a la base de datos
@@ -23,7 +25,7 @@ db.authenticate()
 // porque en la primera aún no nos encontramos en un servidor de producción.
 
 // Definir puerto
-const port = process.env.PORT || 4000;
+const port = process.env.DB_PORT || 4000;
 
 // Habilitar PUG
 // view engine es algo que soporta express
