@@ -1,0 +1,56 @@
+//- Estos archivos llevan la extensión .pug
+//- El html se puede escribir de otra manera.
+//- <h1>Hola</h1>
+//- h1 hola
+//- p=viajes //- Variables
+//- p #{comidas} //- Otra forma de utilizar variables.
+
+//- Extendemos de un layout(página principal) para cargar
+//- los datos que se repiten como el encabezado, el footer, etc...
+extends ./layout/index
+
+//- Para crear un bloque de contenido le agregaremos
+//- nuestro contenido de forma identada.
+block contenido
+    main.container.mt-5
+        .row
+            .col-md-5
+                img(src="img/nosotros.jpg", alt="imagen sobre nosotros", class="img-fluid")
+            .col-md-7
+                h1 #{pagina}
+
+                //- Para que el texto pueda utilizarse en la misma etiqueta pero diferente línea se le agrega | antes del renglón.
+                //- Mas info en: https://pugjs.org/language/plain-text.html
+                
+                blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id neque cursus, 
+                    | fringilla massa in, aliquet urna. Integer scelerisque mi sit amet nulla suscipit dignissim. 
+                    | Aenean ac turpis sollicitudin, venenatis turpis nec, faucibus tortor. Sed ultrices nibh mi, 
+                    | vitae efficitur neque eleifend at. Fusce id consequat est. Cras ipsum ex, egestas at arcu eget, 
+                    | vehicula fringilla purus. Aenean consequat egestas nulla in cursus.
+
+                p Donec quis ultrices neque. Praesent nisi ante, facilisis eu pretium ut, dapibus iaculis odio. 
+                    | Suspendisse luctus purus et eros luctus, sit amet eleifend erat placerat. Aenean vel nisi vel dui
+                    | accumsan faucibus. Quisque vestibulum lacus vitae dui sollicitudin, vel elementum urna euismod. 
+                    | Phasellus in urna arcu. Integer mauris odio, tincidunt at dolor non, tempor commodo dolor.
+
+                p Vestibulum nulla turpis, cursus tincidunt dolor sed, pellentesque aliquam mauris. Nulla molestie pretium diam, 
+                    | ut ultricies risus tincidunt tincidunt. Duis non consectetur massa, ac cursus mi. Sed eget purus eget urna 
+                    | malesuada semper vitae in augue. Donec commodo dolor non venenatis facilisis. Vestibulum ante ipsum primis 
+                    | in faucibus orci luctus et ultrices posuere cubilia curae; Sed nec tempus augue, sed interdum tellus. 
+                    | Nam molestie augue arcu, non facilisis odio pulvinar in. Quisque elit elit, condimentum nec elit sit amet, 
+                    | molestie molestie erat. Nunc vitae purus ac metus cursus rutrum.
+    .listado-iconos
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad
+                    p Quisque elit elit, condimentum nec elit sit amet, molestie molestie erat. Nunc vitae purus ac metus cursus rutrum.
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="icono destinos", class="img-fluid mb-4")
+                    h2.mb-4 Destinos
+                    p Quisque elit elit, condimentum nec elit sit amet, molestie molestie erat. Nunc vitae purus ac metus cursus rutrum.
+                .col-md-4
+                    img(src="img/icono_precios.svg", alt="icono precios", class="img-fluid mb-4")
+                    h2.mb-4 Los Mejores Precios
+                    p Quisque elit elit, condimentum nec elit sit amet, molestie molestie erat. Nunc vitae purus ac metus cursus rutrum.

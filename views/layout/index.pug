@@ -1,0 +1,22 @@
+//- Esta es la nueva sintaxis de pug para html.
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{nombreSitio} | #{pagina}
+        link(rel="stylesheet", href='https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Staatliches&display=swap')
+        link(rel="stylesheet", href="/css/bootstrap.css")
+        link(rel="stylesheet", href="/css/style.css")
+    body(class= clase)
+        //- Incluimos un archivo con solo poner su nombre si esta en la raíz
+        //- de este mismo archivo.
+        include header
+        //- Definimos un nuevo bloque y podemos agregar todos los que deseemos.
+        //- Agregamos este llama slider y cuando lo requeriramos lo mandaremos a llamar
+        //- o llenar pero si no lo llamamos no pasará nada, se quedá vació y no se ejecuta
+        block slider
+
+        //- Llamamos a un bloque de contenido para que muestre aqui lo que tiene
+        block contenido
+        include footer
